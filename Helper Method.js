@@ -26,7 +26,7 @@ console.log(evens); // resulat => [2]
 const words = ["spray","limit","elite","exuberant","destruction","present"]
 const result = words.filter(word=>word.length>5)
 console.log(result); // resulat => ["exuberant","destruction","present"]
-// Exmaples2 :
+// Exmaples3 :
 const fruits = ["appel","banana","grapes","mango","orange"]
 
 function FilterItems(arr,query){
@@ -36,3 +36,32 @@ function FilterItems(arr,query){
 }
 console.log(FilterItems(fruits,"an")) // resulat =>["banana","mango","orange"]
 console.log(FilterItems(fruits,"ap")) // resulat =>["appel","grapes"]
+
+
+// ---------- reduce ----------
+// def : method reduce  the array to a single value
+// note : this method does not change the original array
+// syntax : array.reduce(function(total,item,index,array){},initial value)
+// Exmaples1 :
+const numbersRed = [3,2,3,4]
+
+const sum = numbersRed.reduce(function(total,item,index,array){
+    return total + item 
+},0)
+
+console.log(sum); // result => 12
+
+// ---------- some ----------
+// def : method checks if any of elements in an array pass a test
+// if true returns a true && does not check the remaining values || if false : return false
+// note : some() does not change the original array 
+// syntax : array.some(function(item,index,array),thisValue)
+// Exmaples1 :
+
+const numbersSome = [1,2,3,-4,3]
+
+const neg = numbersSome.some(function(item){
+    return item < 0
+})
+
+console.log(neg); // result => true
